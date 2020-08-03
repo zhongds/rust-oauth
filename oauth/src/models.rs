@@ -1,5 +1,6 @@
-#[derive(Clone)]
-pub struct Options {
+use reqwest;
+
+pub struct Config {
   pub api_origin: String,
   pub client_id: String,
   pub client_secret: String,
@@ -10,7 +11,11 @@ pub struct Options {
   pub storage: String,
 }
 
-#[derive(Clone)]
+pub struct Options {
+  pub method: reqwest::Method,
+  pub headers: reqwest::header::HeaderMap,
+}
+
 pub struct Credentials {
   pub access_token: String,
   pub refresh_token: String,
