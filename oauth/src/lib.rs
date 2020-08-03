@@ -1,7 +1,7 @@
 mod models;
 mod oauth2client;
-pub use models::{Options, Credentials};
-pub use oauth2client::Oauth2client;
+pub use models::{Options, Credentials, Config};
+pub use oauth2client::{Oauth2client, Oauth2clientTrait};
 
 #[cfg(test)]
 mod tests {

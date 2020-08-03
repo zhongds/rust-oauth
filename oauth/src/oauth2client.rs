@@ -4,7 +4,7 @@ use std::string::String;
 use crate::models::{Config, Credentials, Options};
 
 pub struct Oauth2client {
-  config: Config,
+  pub config: Config,
 }
 
 pub trait Oauth2clientTrait {
@@ -29,6 +29,7 @@ impl Oauth2clientTrait for Oauth2client {
 
   #[tokio::main]
   async fn request(&self, url: String, opts: Options) -> reqwest::Result<String>{
+
     let client = reqwest::Client::new();
     // let res = client.post("http://httpbin.org/post")
     // .body("the exact body that is sent")
